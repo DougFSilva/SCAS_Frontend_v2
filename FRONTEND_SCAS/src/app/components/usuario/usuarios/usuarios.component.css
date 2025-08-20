@@ -1,0 +1,87 @@
+.container {
+    padding: 0 2rem;
+}
+
+h1 {
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.card {
+    margin: auto;
+    overflow: auto;
+}
+
+.button-add {
+    margin-bottom: 1rem;
+    background-color: #778899;
+    color: white;
+}
+
+.form-filter {
+    width: 100%;
+}
+
+.table {
+    width: 100%;
+}
+
+.mat-column-nome {
+    width: 30%;
+}
+
+.mat-column-empresa {
+    width: 25%;
+}
+
+
+.mat-column-username {
+    width: 20%;
+}
+
+.mat-column-perfis {
+    width: 20%;
+}
+
+.mat-column-acao {
+    width: 5%;
+}
+
+
+.icon-edit {
+    transform: scale(0.7);
+    color: black;
+    display: inline;
+    cursor: pointer;
+
+}
+
+.icon-delete {
+    transform: scale(0.7);
+    color: red;
+    display: inline;
+    cursor: pointer;
+    margin-left: .4em;
+}
+
+@media (max-width: 768px) {
+
+    .container {
+        padding: 0 1rem;
+    }
+    .card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .button-add {
+        width: 100%;
+    }
+
+}
+
+
+

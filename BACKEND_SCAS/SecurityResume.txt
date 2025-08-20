@@ -1,0 +1,11 @@
+1º - Criar classe SecurityConfiguration
+	- extend WebSecurityConfigurerAdapter
+	- @EnableWebSecurity (classe)
+	- @Configuration (classe)
+	- @Override os 3 configure
+	- Injetar uma dependencia da classe UserDetailServiceAuth
+
+
+2º -
+
+SCAS469120.

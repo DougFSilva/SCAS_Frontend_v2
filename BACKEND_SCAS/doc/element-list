@@ -1,0 +1,10 @@
+com.douglas.SCAS
+com.douglas.SCAS.config
+com.douglas.SCAS.controller
+com.douglas.SCAS.controller.Exception
+com.douglas.SCAS.DTO
+com.douglas.SCAS.enums
+com.douglas.SCAS.model
+com.douglas.SCAS.repository
+com.douglas.SCAS.service
+com.douglas.SCAS.service.Exception

@@ -1,0 +1,39 @@
+Passo a passo SCAS
+
+1 - Baixar o código do git
+2 - Instalar nodejs
+3 - Instalar Docker
+4 - Instalar vscode
+5 - Instalar maven  e colocar em variáveis de ambiente
+6 - Instalar jdk e colocar em variáveis de ambiente
+
+Backend
+1 - Abrir terminal na pasta do BACKEND e digitar 
+	mvn clean package -DskipTests
+
+FRONTEND
+1 - Mudar endereço de IP do backend em src/App/config/api.config
+2 - Mudar imagem de fundo do login em src/assets/img. A imagem deve se chamar backround_login	
+3 - Abrir terminal na pasta do FRONTEND e digitar
+	npm install
+	npm install -g @angular/cli
+	ng build
+
+
+Docker-compose 
+1 - Ativar docker
+2 - Mudar o diretório para as imagens "storage" e para o backup automático
+3 - Alterar usuario e senha de admin
+	ADMIN_USERNAME: admin - alterar
+        ADMIN_PASSWORD: admin - alterar
+4 - Alterar usuário e senha do banco de dados
+	MYSQL_PASSWORD: scas123.  # Senha do usuário da aplicação
+   
+
+5 - Abrir terminal na pasta que está o docker-compose e digitar
+	docker compose -d up
+
+6 - Permitir liberar câmera pelo chrome.
+	Digitar "chrome://flags/" no chrome
+	Encontrar "Insecure origins treated as secure"
+	inserir o IP do servidor

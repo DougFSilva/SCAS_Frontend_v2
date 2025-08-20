@@ -1,0 +1,103 @@
+main {
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.toolbar {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    height: 2.5rem;
+    gap: 20px;
+    background-color: #778899;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.toolbar-p1 {
+    align-items: center;
+    float: left;
+}
+
+.toolbar-p2 {
+
+    display: flex;
+    color: white;
+    align-items: center;
+}
+
+.toolbar-p3 {
+    display: inline;
+    color: white;
+    flex-direction: row;
+}
+
+.toolbar-p4 {
+    float: right;
+    display: flex;
+    color: white;
+    align-items: center;
+    margin-left: auto;
+}
+
+.botao-menu {
+    color: white;
+    transform: scale(1.5);
+
+}
+
+.findByTag {
+    display: flex;
+    flex-direction: row;
+    color: white;
+
+}
+
+.findByTag-icon {
+    padding-top: .4em;
+    margin-right: .2em;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+mat-drawer-container {
+    height: calc(100vh - 2.5rem); /* Ajusta a altura levando em conta a toolbar */
+     margin-top: 2.5rem; /* Ajusta conforme a altura da toolbar */
+}
+
+.sideNav {
+    width: 13rem;
+    color: white;
+    background-color: #778899;
+}
+
+.img-logo {
+    width: 90%;
+    height: auto;
+    margin-left: .6rem;
+
+}
+
+.sideNav a {
+    color: white;
+}
+
+.sideNav i {
+    margin-right: .9rem;
+}
+
+@media (max-width: 768px) {
+    .toolbar-p2 {
+        display: none;
+    }
+}

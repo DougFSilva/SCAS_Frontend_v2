@@ -1,0 +1,85 @@
+Classe Pessoa: 
+
+	Id
+	nome
+	idade
+	rg
+	telefone
+	email
+	datanascimento
+	cidade
+	dataCriacao
+	tag
+	********Adicionar foto
+	----------------------------------
+Classe Aluno: extends Pessoa
+
+	matricula
+	curso
+	dataMatricula
+	empresa
+	ocorrencia
+	aapm
+	termoInternet
+	internetLiberada
+	
+	----------------------------------
+	
+Classe Funcionario: extends Pessoa
+
+	nif
+	password
+	nivelAcesso
+    ----------------------------------
+    
+Classe Curso
+
+	modalidade
+	areaTecnologica
+	turma
+	horarioEntrada
+	horarioSaida
+	horarioAlmocoSaida
+	horarioAlmocoEntrada
+	
+	----------------------------------
+Classe Ocorrencia
+
+	Responsavel
+	data
+	tipo
+	aluno
+	grau
+	descricao
+	
+	----------------------------------
+Classe Formando: extend Pessoa
+	
+	matricula
+	curso
+	dataMatricula
+	empresa
+	ocorrencia
+	aapm
+	termoInternet
+
+	----------------------------------
+Classe Desistente: extend Pessoa
+	
+	matricula
+	curso
+	dataMatricula
+	empresa
+	ocorrencia
+	aapm
+	termoInternet
+	
+	-----------------------------------
+Classe aviso:
+
+	
+	
+	
+	Incluir histórico de ocorrências para os formandos
+	
+	

@@ -1,0 +1,7 @@
+package com.douglas.SCAS.enums;
+
+public enum Semestre {
+
+	PRIMEIRO_SEMESTRE, SEGUNDO_SEMESTRE, TERCEIRO_SEMESTRE, QUARTO_SEMESTRE, EGRESSO
+
+}

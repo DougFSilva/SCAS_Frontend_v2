@@ -1,0 +1,64 @@
+.container {
+    padding: 1rem;
+}
+
+.title {
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+    color: black
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.header-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.header-count {
+    color: black;
+    font-weight: bold;
+    display: inline;
+    margin-right: 1rem;
+}
+
+.button-import {
+    float: right;
+}
+
+.card {
+    background-color: rgb(235, 235, 235);
+    overflow: auto;
+}
+
+.filter {
+    width: 100%;
+}
+
+.table {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+
+    .container {
+        padding: 0 1rem;
+    }
+    .card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .button-add {
+        width: 100%;
+    }
+
+}

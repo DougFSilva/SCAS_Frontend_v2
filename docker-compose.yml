@@ -1,0 +1,60 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql_container
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: admin  # Apenas para manutenção
+      MYSQL_USER: scas_user  # Usuário exclusivo para a aplicação
+      MYSQL_PASSWORD: scas123.  # Senha do usuário da aplicação
+      MYSQL_DATABASE: scas_db  # Nome do banco de dados
+    ports:
+      - "3306:3306"
+    networks:
+      - rede_scas
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  backend:
+    build: ./BACKEND_SCAS
+    container_name: spring_app
+    restart: always
+    depends_on:
+      - mysql
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/scas_db?useSSL=false&allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_USERNAME: scas_user  # Agora usando o usuário específico
+      SPRING_DATASOURCE_PASSWORD: scas123.
+      PHOTO_STORAGE: /app/storage/img/
+      ADMIN_USERNAME: admin
+      ADMIN_PASSWORD: admin
+      DB_BACKUP_FILE_NAME: db_scas
+      DB_BACKUP_SOURCEFILE: /app/backup
+
+    ports:
+      - "8080:8080"
+    networks:
+      - rede_scas
+    volumes:
+      - "C:/Users/Douglas/Documents/SENAI/Carômetro/BACKEND_SCAS/storage:/app/storage"
+      - "C:/Users/Douglas/Documents/SENAI/Carômetro/BACKEND_SCAS/backup:/app/backup"
+
+  frontend:
+    build: ./FRONTEND_SCAS
+    container_name: frontend_container
+    restart: always
+    depends_on:
+      - backend
+    ports:
+      - "80:80"
+    networks:
+      - rede_scas
+      
+networks:
+  rede_scas:
+     driver: bridge
+
+volumes:
+  mysql_data:

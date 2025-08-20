@@ -1,0 +1,38 @@
+Ajustar DTO Alunos
+
+Atualizar respostas Json...
+	- Curso contém turmas
+	- Turmas contém alunos e dias de aula
+	- Alunos contem ponto e ocorrencia
+	- Funcionario contem ponto
+	
+Testar todos Postman
+Criar um usuário admin padrão quando a aplicação começar a rodar
+	
+Verificar retorno dos resultados de busca
+Criar Update usuario
+
+Amarrar todas as buscas, consultas com o ID ao invés de nome, matricula ou outra coisa
+Criar buscar somente turmas que contem alunos?????
+	
+FUNCIONALIDADEV
+
+- Ao alterar desbloqueioTemporario deverá salvar um log 
+
+- Função Gerar crachá
+- Importar alunos documnto XML (talvez Angular ler XML e transformar em JSON)
+- Função habilitar/desabilitar turmas ()
+- Função CRON:
+	- backup de banco de dados
+	
+- Função geração de avisos quando de limite de faltas alunos
+	
+
+- Geração de gráficos de faltas, de atrasos da turma
+
+FRONTEND
+
+- Upload de fotos (Talvez Frontend)
+
+Se não comunicar o front com o back, verificar configuração de Cors
+

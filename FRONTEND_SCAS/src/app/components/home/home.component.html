@@ -1,0 +1,75 @@
+<div class="container">
+  <h1>SISTEMA DE CONTROLE DE ACESSO SENAI - DASHBOARD</h1>
+  <div class="charts">
+    <div class="charts-top">
+      <div class="alunos-cidade">
+        <h2>Alunos por cidade</h2>
+        <canvas class="canvas" baseChart [data]="cidadeChartData" [type]="cidadeChartType" [options]="chartOptions">
+        </canvas>
+      </div>
+
+      <div class="alunos-sexo">
+        <h2>Alunos por sexo</h2>
+        <canvas class="canvas" baseChart [data]="sexoChartData" [type]="sexoChartType" [options]="chartOptions">
+        </canvas>
+      </div>
+
+      <div class="alunos-curso">
+        <h2>Alunos por curso</h2>
+        <canvas class="canvas" baseChart [data]="cursoChartData" [type]="cursoChartType" [options]="chartOptions">
+        </canvas>
+      </div>
+
+    </div>
+
+    <div class="alunos-empresa">
+      <h2>Alunos por empresas</h2>
+      <canvas baseChart [data]="empresaBarChartData" [options]="empresaBarChartOptions"
+        [plugins]="empresaBarChartPlugins" [type]="empresaBarChartType" (chartHover)="chartHovered($event)"
+        (chartClick)="chartClicked($event)">
+      </canvas>
+    </div>
+
+    <div class="alunos-idade">
+      <h2>Alunos por idade</h2>
+      <canvas baseChart [data]="idadeBarChartData" [options]="idadeBarChartOptions" [plugins]="idadeBarChartPlugins"
+        [type]="idadeBarChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)">
+      </canvas>
+    </div>
+
+    <div class="alunos-aniversariantes">
+      <h2>Alunos Aniversariantes</h2>
+      <table mat-table [dataSource]="aniversariantesDataSource" class="table-aniversariantes mat-elevation-z8">
+        <!--- Note that these columns can be defined in any order.
+                  The actual rendered columns are set as a property on the row definition" -->
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="curso">
+          <th mat-header-cell *matHeaderCellDef>Curso</th>
+          <td mat-cell *matCellDef="let element">{{ element.curso }}</td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="turma">
+          <th mat-header-cell *matHeaderCellDef>Turma</th>
+          <td mat-cell *matCellDef="let element">{{ element.turma }}</td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="nome">
+          <th mat-header-cell *matHeaderCellDef>Nome</th>
+          <td mat-cell *matCellDef="let element">{{ element.nome }}</td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="idade">
+          <th mat-header-cell *matHeaderCellDef>Idade</th>
+          <td mat-cell *matCellDef="let element">{{ element.idade }}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+    </div>
+  </div>
+</div>

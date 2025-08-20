@@ -1,0 +1,70 @@
+<div class="container">
+  <h1>EGRESSOS</h1>
+
+  <div class="filtros">
+    <mat-form-field class="form-filter" appearance="standard">
+      <mat-label>Filtrar</mat-label>
+      <input
+        matInput
+        (keyup)="applyFilter()"
+        placeholder="Ex. ium"
+        id="filter"
+        value=""
+      />
+    </mat-form-field>
+
+    <mat-form-field class="form-filter-curso" appearance="legacy">
+      <mat-label>Filtrar por curso:</mat-label>
+      <mat-select
+        [(ngModel)]="idCursoSelected"
+        required
+        (ngModelChange)="findAllByCurso()"
+      >
+        <mat-option *ngFor="let curso of cursos" [value]="curso.id">{{
+          curso.areaTecnologica
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="filter-numeroTurma" appearance="standard">
+      <mat-label>Nº Turma</mat-label>
+      <input
+        matInput
+        [(ngModel)]="numeroTurmaSelected"
+        (keyup)="applyFilter()"
+        placeholder="Ex. ium"
+        value=""
+      />
+    </mat-form-field>
+  </div>
+  <h3 class="result">RESULTADO: {{ totalAlunos }}</h3>
+
+  <div class="cards">
+    <mat-card
+      *ngFor="let egresso of egressosFilter"
+      class="card mat-elevation-z8"
+    >
+      <mat-card-header class="card-header">
+        <div class="card-header-div-title">
+          <span class="card-turma">{{
+            egresso.dataMatricula | date: "dd/MM/yyyy"
+          }}</span>
+        </div>
+
+        <div class="card-header-div-icon-menu"></div>
+      </mat-card-header>
+      <img
+        class="card-img"
+        routerLink="/aluno/{{ egresso.id }}"
+        mat-card-image
+        *ngIf="egresso.matricula"
+        [src]="egresso.foto"
+        alt="Foto {{ egresso.nome }}"
+      />
+      <mat-card-content>
+        <p routerLink="/aluno/{{ egresso.id }}">
+          {{ egresso.nome }}
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

@@ -1,0 +1,144 @@
+.container {
+    width: 100%;
+    margin: auto;
+    padding: 0 2rem;
+}
+
+.container-header {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+
+h1 {
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.filtros {
+    display: flex;
+    gap: 20px;
+    align-items: baseline;
+}
+
+.form-filter {
+    height: 3rem;
+    width: 15rem;
+}
+
+.form-filter-curso {
+    height: 3rem;
+    width: 15rem;
+}
+
+.filter-numeroTurma {
+    height: 3rem;
+    width: 5rem;
+}
+
+.result {
+    color: black;
+}
+
+.cards {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+    gap: 1rem;
+}
+
+.card {
+    min-height: 19rem;
+    height: 19rem;
+    background-color: rgb(235, 235, 235);
+}
+
+.card:hover {
+    top: -2px;
+    box-shadow: 0 .5rem .5rem #666;
+}
+
+.card-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: -1rem;
+}
+
+.card-header-div-title {
+    width: 70%;
+    text-align: center;
+}
+
+.card-header-div-icon-menu {
+    width: 15%;
+    margin-right: .5rem;
+}
+
+
+.card-turma {
+    color: black;
+    font-weight: bold;
+}
+
+.card-img {
+    width: 90%;
+    height: 70%;
+    margin: 0% 5%;
+    cursor: pointer;
+}
+
+mat-card-content {
+    max-height: 3.2em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    margin-top: 1rem;
+    color: blue;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+@media (max-width: 1120px) {
+    .cards {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width: 900px) {
+    .cards {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .filtros {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .form-filter, .form-filter-curso {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        width: 80%;
+        margin: auto;
+    }
+
+    .button-add, .form-filter {
+        width: 100%;
+    }
+}
